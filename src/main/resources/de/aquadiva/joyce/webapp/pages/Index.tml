@@ -1,0 +1,54 @@
+<html t:type="layout" title="ad-ontology-webapp Index"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+        >
+
+    <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
+
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="hero-unit">
+        <h3>${message:greeting}</h3>
+        <p>
+            Enter a set of terms or a text that describes your domain of interest. Based on your input, JOYCE will suggest combinations of ontologies or pieces of ontologies (modules) with the following properties
+            <ul>
+            	<li>the concepts defined in these adequately represent a large amount of the input terms (coverage),</li>
+            	<li>the number of concepts to which no profile term can be mapped is small (overhead), and</li>
+            	<li>the number of concepts that are defined in more than one of the ontologies or modules is small (overlap).</li>
+			</ul>            
+            By changing the configuration paramters below, you can adjust the importance of each of these 3 criteria during the assembly of combinations. You can also configure the maximum number ontologies (ontology modules) to be combined.
+        </p>
+        <!--<p><t:actionlink t:id="learnmore" class="btn btn-primary btn-large">Learn more &raquo;</t:actionlink></p>-->
+    </div>
+        
+	<t:beaneditform t:id="configform" object="runconfiguration" submitlabel="message:submit-label"  reorder="keywords,typeOfObjectToSelect,maxNumberOfOntologies,preferenceCoverage,preferenceOverhead,preferenceOverlap,sampleSize"/>
+
+	<t:grid source="results" rowsPerPage="10" reorder="numOfOntologies,ontologies,coverage,overlap,overhead"/>
+	
+	<!-- <t:grid source="results" rowsPerPage="10" empty="emptyBlock" reorder="numOfOntologies,ontologies,coverage,overlap,overhead"/>
+	<t:block id="emptyBlock">There are no results to display!</t:block>-->
+	
+
+    <!-- Example row of columns 
+    <div class="row">
+        <div class="span4">
+            <h2>Normal link</h2>
+            <p>Clink the bottom link and the page refresh with event <code>complete</code></p>
+            <p><t:eventlink event="complete" class="btn btn-default">Complete&raquo;</t:eventlink></p>
+        </div>
+        <t:zone t:id="middlezone" class="span4">
+
+        </t:zone>
+        <div class="span4">
+            <h2>Ajax link</h2>
+            <p>Click the bottom link to update just the middle column with Ajax call with event <code>ajax</code></p>
+            <p><t:eventlink event="ajax" zone="middlezone" class="btn btn-default">Ajax&raquo;</t:eventlink></p>
+        </div>
+    </div>
+
+    <t:block t:id="block">
+        <h2>Ajax updated</h2>
+        <p>I'v been updated through AJAX call</p>
+        <p>The current time is: <strong>${currentTime}</strong></p>
+    </t:block>
+    -->
+
+</html>
