@@ -142,7 +142,7 @@ of testing facilities designed for use with TestNG (http://testng.org/), so it's
     <parent>
     	<groupId>de.aquadiva</groupId>
     	<artifactId>joyce</artifactId>
-    	<version>1.0.3</version>
+    	<version>1.0.4</version>
     	<relativePath>..</relativePath>
     </parent>
     <description>This project combines all classes and resources that make up the Web interface for JOYCE.</description>
